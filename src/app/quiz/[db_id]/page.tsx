@@ -12,9 +12,9 @@ const Quiz = async ({
   searchParams,
 }: {
   params: { db_id: string };
-  searchParams: Promise<{ num?: string }>;
+  searchParams: { num?: string };
 }) => {
-  const { db_id } = params;
+  const { db_id } = await params;
   const { num } = await searchParams;
 
   const DBorQuiz = await judgeDBorQuiz(db_id);

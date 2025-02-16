@@ -12,10 +12,10 @@ const Quiz = async ({
   searchParams,
 }: {
   params: { db_id: string };
-  searchParams: { num: string };
+  searchParams: { num?: string };
 }) => {
   const { db_id } = await params;
-  const { num = undefined } = await searchParams;
+  const num = (await searchParams.num) ? Number(searchParams.num) : undefined;
 
   const DBorQuiz = await judgeDBorQuiz(db_id);
   switch (DBorQuiz) {
@@ -27,9 +27,7 @@ const Quiz = async ({
         "データベースが設定されていない要素があります。自動的にクイズデータとして扱います。意図していない場合は修正してください。"
       );
       const { QuizListData } = await getQuizListData(db_id);
-      return (
-        <QuizPage QuizListData={QuizListData} db_id={db_id} num={Number(num)} />
-      );
+      return <QuizPage QuizListData={QuizListData} db_id={db_id} num={num} />;
     default:
       return notFound();
   }

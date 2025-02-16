@@ -14,8 +14,8 @@ const Quiz = async ({
   params: { db_id: string };
   searchParams: { num?: string };
 }) => {
-  const { db_id } = await params;
-  const num = (await searchParams.num) ? Number(searchParams.num) : undefined;
+  const { db_id } = params;
+  const num = searchParams.num ? parseInt(searchParams.num) : undefined;
 
   const DBorQuiz = await judgeDBorQuiz(db_id);
   switch (DBorQuiz) {

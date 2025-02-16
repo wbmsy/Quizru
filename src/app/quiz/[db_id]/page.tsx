@@ -1,4 +1,3 @@
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import DatabaseList from "../../../features/quiz/components/DatabaseList";
 import QuizPage from "../../../features/quiz/QuizPage";

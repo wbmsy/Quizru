@@ -23,7 +23,7 @@ export const judgeDBorQuiz = async (db_id: string) => {
 export const getQuizDatabase = async (db_id: string) => {
   const quizData = await getQuizData(db_id);
   const quizDataLength: number = quizData.results.length;
-  let QuizDatabase: QuizDatabase[] = [];
+  const QuizDatabase: QuizDatabase[] = [];
   for (let i = 0; i < quizDataLength; i++) {
     const properties = quizData.results[i].properties;
 
@@ -64,7 +64,7 @@ export const getQuizListData = async (db_id: string) => {
   const quizData = await getQuizData(db_id);
   const quizDataLength: number = quizData.results.length;
 
-  let QuizListData: QuizListData[] = [];
+  const QuizListData: QuizListData[] = [];
   for (let i = 0; i < quizDataLength; i++) {
     const properties = quizData.results[i].properties;
 
@@ -91,7 +91,7 @@ export const getQuizListData = async (db_id: string) => {
 
     //オプションをある分だけ取ってくる
     let isHasMoreOption = true;
-    let optionArray: string[] = [];
+    const optionArray: string[] = [];
     let k = 1;
     while (isHasMoreOption == true) {
       properties["option_" + k]
@@ -128,7 +128,7 @@ export const getQuizListData = async (db_id: string) => {
 
 export const getQuizCorrectAnswer = async (db_id: string, num: number) => {
   const quizData = await getQuizData(db_id);
-  let rightArray: string[] = [];
+  const rightArray: string[] = [];
   const properties = quizData.results[num - 1].properties;
   //答えをある分だけ取ってくる
   let isHasMoreCorrectAnswer = true;

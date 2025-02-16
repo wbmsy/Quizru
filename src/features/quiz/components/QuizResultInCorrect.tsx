@@ -18,7 +18,7 @@ const QuizResultInCorrect: React.FC<{
       setQuizCorrectAnswer(answers);
     };
     fetchCorrectAnswer();
-  }, []);
+  }, [db_id, num]);
 
   const nextQuizSubmitWithValues = nextQuizSubmit.bind(null, db_id, num);
 

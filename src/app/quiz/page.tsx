@@ -30,7 +30,7 @@ const Quiz = async ({
               className="w-full h-12 px-4 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200 font-medium"
               type="text"
               defaultValue={db_id}
-              placeholder="例）191117333d7580c695b8ec3bbdb91979"
+              placeholder="ex.191117333d7580c695b8ec3bbdb91979"
               id="text"
               name="DataBaseID"
             />

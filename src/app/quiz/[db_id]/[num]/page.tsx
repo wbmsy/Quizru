@@ -1,14 +1,19 @@
 import { notFound } from "next/navigation";
-import DatabaseList from "../../../features/quiz/components/DatabaseList";
-import QuizPage from "../../../features/quiz/QuizPage";
+import DatabaseList from "../../../../features/quiz/components/DatabaseList";
+import QuizPage from "../../../../features/quiz/QuizPage";
 import {
   getQuizDatabase,
   getQuizListData,
   judgeDBorQuiz,
 } from "@/features/quiz/getDatabaseProperties";
 
-const Quiz = async ({ params }: { params: Promise<{ db_id: string }> }) => {
-  const { db_id } = await params;
+const Quiz = async ({
+  params,
+}: {
+  params: Promise<{ db_id: string; num?: string }>;
+}) => {
+  const { db_id, num } = await params;
+  console.log(num);
 
   const DBorQuiz = await judgeDBorQuiz(db_id);
   switch (DBorQuiz) {
@@ -21,7 +26,11 @@ const Quiz = async ({ params }: { params: Promise<{ db_id: string }> }) => {
       );
       const { QuizListData } = await getQuizListData(db_id);
       return (
-        <QuizPage QuizListData={QuizListData} db_id={db_id} num={undefined} />
+        <QuizPage
+          QuizListData={QuizListData}
+          db_id={db_id}
+          num={num ? parseInt(num) : undefined}
+        />
       );
     default:
       return notFound();

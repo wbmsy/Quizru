@@ -7,7 +7,7 @@ const QuizPage: React.FC<{
   num?: number;
 }> = ({ QuizListData, db_id, num = 1 }) => {
   if (1 <= num && num <= QuizListData.length) {
-    const quizForm = (
+    return (
       <QuizForm
         title={QuizListData[num - 1].title}
         imageURL={QuizListData[num - 1].imageURL}
@@ -18,18 +18,6 @@ const QuizPage: React.FC<{
         num={num}
       />
     );
-
-    // const quizResult = (
-    //   <QuizResult
-    //     result={}
-    //     rightArray={QuizListData[num - 1].rightArray}
-    //     db_id={db_id}
-    //     num={num}
-    //   />
-    // );
-
-    return quizForm;
-    // ?? quizResult
   } else {
     return notFound();
   }

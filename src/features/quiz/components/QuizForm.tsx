@@ -1,7 +1,7 @@
 "use client";
 
 import QuizSubmit from "@/features/quiz/QuizSubmit";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import QuizResultInCorrect from "./QuizResultInCorrect";
 import QuizResultCorrect from "./QuizResultCorrect";
 

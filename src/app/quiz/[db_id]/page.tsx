@@ -12,7 +12,7 @@ const Quiz = async ({
   searchParams,
 }: {
   params: { db_id: string };
-  searchParams: { num: number };
+  searchParams: { num: string };
 }) => {
   const { db_id } = await params;
   const { num = undefined } = await searchParams;
@@ -27,7 +27,9 @@ const Quiz = async ({
         "データベースが設定されていない要素があります。自動的にクイズデータとして扱います。意図していない場合は修正してください。"
       );
       const { QuizListData } = await getQuizListData(db_id);
-      return <QuizPage QuizListData={QuizListData} db_id={db_id} num={num} />;
+      return (
+        <QuizPage QuizListData={QuizListData} db_id={db_id} num={Number(num)} />
+      );
     default:
       return notFound();
   }

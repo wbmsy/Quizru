@@ -13,11 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>
-        <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">
-          {children}
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

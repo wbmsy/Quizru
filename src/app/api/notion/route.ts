@@ -7,9 +7,9 @@ const notion = new Client({
 
 export async function POST(request: Request) {
   try {
-    const { dbid } = await request.json();
+    const { db_id } = await request.json();
     const res = await notion.databases.query({
-      database_id: dbid,
+      database_id: db_id,
     });
     return NextResponse.json(res);
   } catch (error) {

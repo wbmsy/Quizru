@@ -6,7 +6,11 @@ const Submit = async (formData: FormData) => {
   redirect(`/quiz/${db_id}`);
 };
 
-const Quiz = async ({ searchParams }: { searchParams: { db_id: string } }) => {
+const Quiz = async ({
+  searchParams,
+}: {
+  searchParams: Promise<{ db_id: string }>;
+}) => {
   const { db_id } = await searchParams;
   return (
     <>

@@ -11,8 +11,8 @@ const Quiz = async ({
   params,
   searchParams,
 }: {
-  params: { db_id: string };
-  searchParams: { num?: string };
+  params: Promise<{ db_id: string }>;
+  searchParams: Promise<{ num?: string }>;
 }) => {
   const { db_id } = await params;
   const { num } = await searchParams;

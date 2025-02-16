@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { makeApiBase } from "../makeApiBase";
 
 const getQuizData = async (db_id: string) => {
@@ -11,7 +12,7 @@ const getQuizData = async (db_id: string) => {
     next: { revalidate: 3600 },
   });
   if (res.status == 500) {
-    return "error";
+    return notFound();
   } else {
     return res.json();
   }

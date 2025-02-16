@@ -10,6 +10,12 @@ export async function POST(request: Request) {
     const { db_id } = await request.json();
     const res = await notion.databases.query({
       database_id: db_id,
+      sorts: [
+        {
+          property: "num",
+          direction: "ascending",
+        },
+      ],
     });
     return NextResponse.json(res);
   } catch (error) {

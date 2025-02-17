@@ -27,14 +27,11 @@ export default function Template({ children }: { children: React.ReactNode }) {
     >
       <motion.div
         className="w-screen h-screen"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
-          duration: 0.8,
+          duration: 0.5,
           ease: "easeInOut",
-          type: "spring",
-          stiffness: 200,
-          damping: 20,
         }}
       >
         <div className="h-screen flex flex-col items-center justify-center">

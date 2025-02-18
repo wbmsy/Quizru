@@ -85,27 +85,29 @@ const QuizForm: React.FC<FormProps> = ({
               {default_format == "select" && (
                 <>
                   <form onSubmit={handleSubmit}>
-                    {option
-                      .sort(() => Math.random() - 0.5)
-                      .map((item, index) => (
-                        <div key={index} className="mb-4">
-                          <label
-                            htmlFor={item}
-                            className="flex items-center space-x-4 py-2 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-200 ease-in-out cursor-pointer"
-                          >
-                            <input
-                              className="form-radio h-6 w-6 text-blue-600 transition duration-150 ease-in-out"
-                              type="radio"
-                              name="radio"
-                              id={item}
-                              value={item}
-                            />
-                            <span className="block text-base font-semibold text-gray-800">
-                              {item}
-                            </span>
-                          </label>
-                        </div>
-                      ))}
+                    <div className="w-full h-64 grid grid-flow-row grid-cols-1 gap-3 items-center justify-start overflow-auto">
+                      {option
+                        .sort(() => Math.random() - 0.5)
+                        .map((item, index) => (
+                          <div key={index} className="mb-1">
+                            <label
+                              htmlFor={item}
+                              className="flex items-center space-x-4 py-2 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-200 ease-in-out cursor-pointer"
+                            >
+                              <input
+                                className="form-radio h-6 w-6 text-blue-600 transition duration-150 ease-in-out"
+                                type="radio"
+                                name="radio"
+                                id={item}
+                                value={item}
+                              />
+                              <span className="block text-base font-semibold text-gray-800">
+                                {item}
+                              </span>
+                            </label>
+                          </div>
+                        ))}
+                    </div>
                     <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition duration-200">
                       送信する
                     </button>

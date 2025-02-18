@@ -22,14 +22,11 @@ const QuizResultInCorrect: React.FC<{
   return (
     <motion.div
       className="w-screen h-auto"
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        duration: 1.5,
-        ease: "easeInOut",
-        type: "spring",
-        stiffness: 400,
-        damping: 20,
+        duration: 0.8,
+        ease: "easeOut",
       }}
     >
       <div className="flex flex-col bg-white rounded-lg shadow-xl p-8 w-[90%] max-w-[500px] mx-auto border border-gray-100">

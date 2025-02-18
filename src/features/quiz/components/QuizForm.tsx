@@ -85,7 +85,7 @@ const QuizForm: React.FC<FormProps> = ({
               {default_format == "select" && (
                 <>
                   <form onSubmit={handleSubmit}>
-                    <div className="w-full h-64 grid grid-flow-row grid-cols-1 gap-3 items-center justify-start overflow-auto">
+                    <div className="w-full max-h-64 grid grid-flow-row grid-cols-1 gap-3 items-center justify-start overflow-auto mb-2">
                       {option
                         .sort(() => Math.random() - 0.5)
                         .map((item, index) => (

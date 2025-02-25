@@ -11,9 +11,13 @@ const DatabaseList: React.FC<{ QuizDatabase: QuizDatabase[] }> = ({
         <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center">
           クイズ一覧
         </h2>
-        <div className="max-h-[90%] grid grid-flow-row grid-cols-1 md:grid-cols-2 place-items-center overflow-auto">
+        <div className="max-h-[90%] grid grid-flow-row grid-cols-1 md:grid-cols-2 overflow-auto">
           {QuizDatabase.map((item, index) => (
-            <Link key={index} href={`/quiz/${item.data.db_id}`}>
+            <Link
+              key={index}
+              href={`/quiz/${item.data.db_id}`}
+              className="w-full place-items-center"
+            >
               <ListImage
                 listTitle={item.title}
                 imageURL={item.imageURL || "/NO-IMAGE.jpg"}

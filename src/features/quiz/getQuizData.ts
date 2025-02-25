@@ -9,7 +9,7 @@ const getQuizData = async (db_id: string) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ db_id }),
-    next: { revalidate: 3600 },
+    next: { revalidate: 2678400 }, // 31 days
   });
   if (res.status == 500) {
     return notFound();

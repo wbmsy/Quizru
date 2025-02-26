@@ -5,9 +5,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="bg-gradient-to-br from-blue-200 to-purple-200">
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }

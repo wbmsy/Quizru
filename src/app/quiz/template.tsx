@@ -25,19 +25,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
         ease: "linear",
       }}
     >
-      <motion.div
-        className="w-screen h-screen"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.5,
-          ease: "easeInOut",
-        }}
-      >
-        <div className="h-screen flex flex-col items-center justify-center">
-          {children}
-        </div>
-      </motion.div>
+      <div className="h-screen flex flex-col items-center justify-center">
+        {children}
+      </div>
     </motion.div>
   );
 }

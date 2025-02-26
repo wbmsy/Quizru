@@ -16,6 +16,7 @@ const ListImage: React.FC<ListImageProps> = ({ listTitle, imageURL }) => {
           className="w-full h-full rounded-md object-cover"
           src={imageURL}
           alt={listTitle}
+          loading="lazy"
         />
       </div>
     </>

@@ -19,11 +19,7 @@ const Quiz = async ({
   switch (DBorQuiz) {
     case "DB":
       const { QuizDatabase } = await getQuizDatabase(db_id);
-      return (
-        <>
-          <DatabaseList QuizDatabase={QuizDatabase} />
-        </>
-      );
+      return <DatabaseList QuizDatabase={QuizDatabase} />;
     case "Quiz":
       console.warn(
         "データベースが設定されていない要素があります。自動的にクイズデータとして扱います。意図していない場合は修正してください。"

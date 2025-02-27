@@ -12,6 +12,7 @@ interface FormProps {
   option: string[];
   placeholder: string;
   db_id: string;
+  prev_db_id?: string;
   num: number;
 }
 
@@ -22,6 +23,7 @@ const QuizForm: React.FC<FormProps> = ({
   option,
   placeholder,
   db_id,
+  prev_db_id,
   num,
 }) => {
   const [result, setResult] = useState<boolean | undefined>(undefined);
@@ -71,9 +73,13 @@ const QuizForm: React.FC<FormProps> = ({
 
   switch (result) {
     case true:
-      return <QuizResultCorrect db_id={db_id} num={num} />;
+      return (
+        <QuizResultCorrect db_id={db_id} prev_db_id={prev_db_id} num={num} />
+      );
     case false:
-      return <QuizResultInCorrect db_id={db_id} num={num} />;
+      return (
+        <QuizResultInCorrect db_id={db_id} prev_db_id={prev_db_id} num={num} />
+      );
     default:
       return (
         <>

@@ -2,9 +2,15 @@ import { nextQuizSubmit } from "../nextQuizSubmit";
 
 const QuizResultCorrect: React.FC<{
   db_id: string;
+  prev_db_id?: string;
   num: number;
-}> = ({ db_id, num }) => {
-  const nextQuizSubmitWithValues = nextQuizSubmit.bind(null, db_id, num);
+}> = ({ db_id, prev_db_id, num }) => {
+  const nextQuizSubmitWithValues = nextQuizSubmit.bind(
+    null,
+    db_id,
+    prev_db_id,
+    num
+  );
 
   return (
     <div className="flex flex-col bg-white rounded-lg shadow-xl p-8 w-[90%] max-w-[500px] mx-auto border border-gray-100">

@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import QuizForm from "./components/QuizForm";
 
 const QuizPage: React.FC<{
